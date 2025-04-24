@@ -1,7 +1,6 @@
-package com.inditex.domain.model;
+package com.inditex.prices.model;
 
 import jakarta.persistence.*;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 
@@ -42,6 +41,12 @@ public class Price {
      */
     @Column(name = "PRICE_LIST")
     private Long priceList;
+
+    /**
+     * Identificador unico del producto al que se le asigna un precio
+     */
+    @Column(name = "PRODUCT_ID")
+    private Long productId;
 
     /**
      * Prioridad del precio aplicado
@@ -131,4 +136,5 @@ public class Price {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
 }
