@@ -1,6 +1,6 @@
 package com.inditex.prices.service;
 
-import com.inditex.dto.PriceResponse;
+import com.inditex.prices.response.PriceResponse;
 import com.inditex.prices.exception.PriceNotFoundException;
 import com.inditex.prices.model.Price;
 import com.inditex.prices.repository.PriceRepository;
@@ -34,7 +34,7 @@ public class PriceService {
         return prices.stream()
                 .max(Comparator.comparingInt(Price::getPriority))
                 .map(price -> new PriceResponse(
-                        price.getId(),
+                        price.getProductId(),
                         price.getBrandId(),
                         price.getPriceList(),
                         price.getStartDate(),

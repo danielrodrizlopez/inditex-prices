@@ -11,6 +11,18 @@ import java.time.LocalDateTime;
 @Table(name = "PRICES")
 public class Price {
 
+    public Price(){
+
+    }
+
+    public Price(Long id, Long brandId, Double price, LocalDateTime startDate, LocalDateTime endDate) {
+        this.id = id;
+        this.brandId = brandId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.price = price;
+    }
+
     /**
      * Identificador unico para cada precio en la base de datos
      */
@@ -72,6 +84,16 @@ public class Price {
     /**
      * GETTERS Y SETTERS
      */
+
+
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
 
     public Long getId() {
         return id;

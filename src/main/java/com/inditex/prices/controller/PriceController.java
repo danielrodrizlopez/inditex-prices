@@ -27,7 +27,7 @@ public class PriceController {
     public ResponseEntity<?> getPrice(
         @RequestParam("productId") Long productId,
         @RequestParam("brandId") Long brandId,
-        @RequestParam("date") LocalDateTime date){
+        @RequestParam ("date")  LocalDateTime date){
 
         return priceService.getFinalPrice(productId, brandId, date)
                 .map(ResponseEntity::ok)
